@@ -2,7 +2,6 @@ welcome to my to do list
 i am wissem hajbi and this is how to use my app
 
 1 - register a new account
-
 ![image](https://user-images.githubusercontent.com/76587329/138091651-4ac07be6-6d66-4ccf-b2cd-e6a564cc1ef2.png)
 
 
