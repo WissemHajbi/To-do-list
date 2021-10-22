@@ -6,7 +6,7 @@ body {
     .container {
     max-width:1000px;
     margin:auto;
-    background-color:#ffff;
+    background-color:#fff;
     -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
     box-shadow:2px 2px 13px -4px rgba(0,0,0,0.21);
     }
@@ -24,7 +24,8 @@ body {
         columns: #fff;
         padding:10px;
         border-radius:5px 5px 0 0 ;
-        background:linear-gradient(90deg,#EEA390 0%,#EB796F 43%,#EB796F 100%);
+        background: #C684F4;
+        background: -webkit-linear-gradient(bottom right, #C684F4, #7408AF);
     }
     .header_bar a{
         color:rgb(247,247,248);
@@ -61,7 +62,7 @@ body {
     .delete_goal{
         text-decoration: none;
         font-weight:900;
-        color:#db2222;
+        color:#7408AF;
         font-size: 22px;
         line-height:o;
     }
@@ -72,15 +73,15 @@ body {
         padding:10px;
     }
     .create{
-        color:#EB796F;
+        color:#7408AF;
         text-decoration: none;
         font-size:40px;
         text-shadow:1px 1px #81413b;
     }
     .button{
-        border: 1px solid #EB796F;
+        border: 1px solid #7408AF;
         background-color:#FAFAFA;
-        color:#EB796F;
+        color:#7408AF;
         padding:10px;
         font-size: 14px;
         border-radius:5px;
@@ -90,7 +91,7 @@ body {
     input[type=text],
     input[type=password],
     textarea{
-        border: 1px solid #EB796F;
+        border: 1px solid #7408AF;
         border-radius: 5px;
         padding:10px;
         width:80%;
