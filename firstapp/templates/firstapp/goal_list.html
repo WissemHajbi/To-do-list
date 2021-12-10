@@ -1,54 +1,60 @@
-{% extends 'firstapp/main.html' %}
-{% block content %}
+{% extends 'firstapp/main.html' %} {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>to do list</title>
-</head>
-<body>
+  </head>
+  <body>
     <dev class="header_bar">
-        <div>
-            <h1>Hello {{request.user|title}}</h1>
-        </div>
-        {% if request.user.is_authenticated %}
-            <a href="{% url 'logout' %}">logout</a>
-        {% else %}
-            <a href="{% url 'login' %}">login</a>
-        {% endif %}
+      <div>
+        <h1>Hello {{request.user|title}}</h1>
+      </div>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'logout' %}">logout</a>
+      {% else %}
+      <a href="{% url 'login' %}">login</a>
+      {% endif %}
     </dev>
 
     <div class="search_wrapper">
-        <form method="GET" style="margin-top:20px; display:flex;">
-            <input type="text" name="search_area" value="{{search_input}}" style="margin-right:10px">
-            <input type="submit" value="Search" class="button"> 
-        </form>
-        <a href="{% url 'goal_create' %}" class="create">&#x2b;</a>
+      <form method="GET" style="margin-top: 20px; display: flex">
+        <input
+          type="text"
+          name="search_area"
+          value="{{search_input}}"
+          style="margin-right: 10px"
+        />
+        <input type="submit" value="Search" class="button" />
+      </form>
+      <a href="{% url 'goal_create' %}" class="create">&#x2b;</a>
     </div>
 
     <div class="goal_list_wrapper">
-        {% for goal in goals %}
-            <div class="goal_wrapper">
-                {% if goal.done %}
-                    <div class="goal_title">
-                        <div class="goal_complete_icon"></div>
-                        <i><s><a href="{% url 'goal_update' goal.id %}">{{goal}}</a></s></i>
-                    </div>
-                    <a href="{% url 'goal_delete' goal.id %}" class="delete_goal">&#215;</a>
-                {% else %}
-                    <div class="goal_title">
-                        <div class="goal_incomplete_icon"></div>
-                        <a href="{% url 'goal_update' goal.id %}">{{goal}}</a>
-                    </div>
-                    <a href="{% url 'goal_delete' goal.id %}" class="delete_goal">&#215;</a>
-                {% endif %}
-            </div>
-        {% empty %}
-            <h3>no goals in list</h3>
-        {% endfor %}
+      {% for goal in goals %}
+      <div class="goal_wrapper">
+        {% if goal.done %}
+        <div class="goal_title">
+          <div class="goal_complete_icon"></div>
+          <i
+            ><s><a href="{% url 'goal_update' goal.id %}">{{goal}}</a></s></i
+          >
+        </div>
+        <a href="{% url 'goal_delete' goal.id %}" class="delete_goal">&#215;</a>
+        {% else %}
+        <div class="goal_title">
+          <div class="goal_incomplete_icon"></div>
+          <a href="{% url 'goal_update' goal.id %}">{{goal}}</a>
+        </div>
+        <a href="{% url 'goal_delete' goal.id %}" class="delete_goal">&#215;</a>
+        {% endif %}
+      </div>
+      {% empty %}
+      <h3>no goals in list</h3>
+      {% endfor %}
     </div>
-</body>
+  </body>
 </html>
 {% endblock content %}

@@ -1,36 +1,34 @@
-{% extends 'firstapp/main.html' %}
-{% block content %}
+{% extends 'firstapp/main.html' %} {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header_bar">
-        <h1>Register</h1>
+      <h1>Register</h1>
     </div>
     <div class="create_body">
-        <form method="POST">
-            {% csrf_token %}
-            <label >
-                {{form.username.label}}
-            </label>
-                {{form.username}}
-            <label >
-                {{form.password1.label}}
-            </label>
-                {{form.password1}}
-            <label >
-                {{form.password2.label}}
-            </label>
-                {{form.password2}}
-            <input type="submit" value="Register" class="button" style="margin-top:10px;">
-        </form>
-        <p>already have an account ? <a href="{% url 'login' %}">LOGIN</a> </p>
+      <form method="POST">
+        {% csrf_token %}
+        <label> {{form.username.label}} </label>
+        {{form.username}}
+        <label> {{form.password1.label}} </label>
+        {{form.password1}}
+        <label> {{form.password2.label}} </label>
+        {{form.password2}}
+        <input
+          type="submit"
+          value="Register"
+          class="button"
+          style="margin-top: 10px"
+        />
+      </form>
+      <p>already have an account ? <a href="{% url 'login' %}">LOGIN</a></p>
     </div>
-</body>
+  </body>
 </html>
 {% endblock content %}
